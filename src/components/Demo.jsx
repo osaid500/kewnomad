@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import { jobApi, useLazyGetJobInfoQuery } from "../services/job";
+import JobElement from "./JobElement";
 
 const Demo = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -19,24 +20,25 @@ const Demo = () => {
   }
 
   return (
-    <section className="mt-16 w-full max-w-xl">
-      <div className="flex flex-col w-full gap-2">
-        <form
-          className="relative flex justify-center items-center"
-          onSubmit={handleSubmit}
-        >
-          <input
-            className="w-full px-10 py-5 text-gray-700 rounded-md focus:outline-none"
-            type="text"
-            placeholder="Search for a job"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            required
-          />
-          <button className="absolute right-0 mr-4 px-4 py-2 rounded-md font-medium bg-emerald-600 text-white transition hover:bg-emerald-700">
-            Find Jobs
-          </button>
-        </form>
+    <section className="mt-16 w-full flex flex-col items-center">
+      <form
+        className="relative w-full gap-2 flex flex-col justify-center items-center max-w-xl"
+        onSubmit={handleSubmit}
+      >
+        <input
+          className="w-full px-10 py-5 text-gray-700 rounded-md focus:outline-none"
+          type="text"
+          placeholder="Search for a job"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          required
+        />
+        <button className="absolute right-0 mr-4 px-4 py-2 rounded-md font-medium bg-emerald-600 text-white transition hover:bg-emerald-700">
+          Find Jobs
+        </button>
+      </form>
+      <div className="w-full grid grid-cols-1 bg-green md:grid-cols-2 mt-5">
+        <JobElement />
       </div>
     </section>
   );
