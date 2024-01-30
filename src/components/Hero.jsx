@@ -3,7 +3,7 @@ import React from "react";
 const Hero = () => {
   return (
     <header className="w-full flex flex-col items-center justify-center">
-      <nav className="w-full flex justify-between items-center pt-3">
+      <nav className="w-full flex justify-between items-center pt-3 mb-10">
         <span className="text-3xl font-medium text-gray-700 tracking-wide">
           KewNomad
         </span>
@@ -15,6 +15,20 @@ const Hero = () => {
           Github
         </button>
       </nav>
+      <h1 className="text-5xl font-medium text-center">
+        Unlock Your Remote Career Journey with{" "}
+        <span className="bg-gradient-to-r from-green-600 via-cyan-600 to-blue-400 bg-clip-text text-transparent">
+          KewNomad
+        </span>
+      </h1>
+      <h2 className="text-gray-800 text-center text-lg mt-5">
+        Unlock Your Remote Career Journey with KewNomad KewNomad opens the door
+        to a world of remote job opportunities. Dive into thoughtfully curated
+        job listings, streamline your application process, and connect with
+        companies embracing the remote work revolution. No subscriptions or user
+        licenses—just a seamless experience designed for your remote career
+        exploration.
+      </h2>
     </header>
   );
 };
