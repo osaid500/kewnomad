@@ -2,11 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-Welcome to KewNomad, your go-to platform for discovering remote job opportunities. Whether you're a seasoned professional or just starting your remote work journey, KewNomad is here to connect you with exciting opportunities from around the world.
+Welcome to KewNomad, your go-to platform for discovering diverse job opportunities. Whether you're a seasoned professional or just starting your career journey, KewNomad is here to connect you with exciting opportunities from around the world. Explore a wide range of job listings tailored to your skills and interests.
 
 ## Features
 
-- **Job Listings:** Browse a curated list of remote job opportunities.
+- **Job Listings:** Browse a curated list of job opportunities.
 
 ## Getting Started
 
@@ -36,12 +36,7 @@ Welcome to KewNomad, your go-to platform for discovering remote job opportunitie
 - React
 - Redux
 - Tailwind CSS
-- [RapidApi - Remote Jobs Api](https://rapidapi.com/kazamos/api/remote-jobs-api)
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Hat tip to [RapidAPI's Remote Jobs Api](https://rapidapi.com/kazamos/api/remote-jobs-api) for providing job data.
