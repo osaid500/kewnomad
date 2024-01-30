@@ -6,7 +6,7 @@ const App = () => {
   return (
     <main>
       <div className="absolute w-full h-full bg-gray-200" />
-      <div className="relative flex flex-col justify-center items-center mx-auto sm:px-16 px-6">
+      <div className="relative flex flex-col justify-center items-center max-w-7xl mx-auto sm:px-16 px-6">
         <Hero />
         <Demo />
       </div>

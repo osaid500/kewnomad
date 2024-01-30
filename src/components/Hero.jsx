@@ -15,13 +15,13 @@ const Hero = () => {
           Github
         </button>
       </nav>
-      <h1 className="text-5xl font-medium text-center">
-        Discover Your Career Journey with{" "}
+      <h1 className="text-5xl text-center mt-5 font-extrabold leading-[1.15]">
+        Discover Your Career Journey with <br className="max-md:hidden" />
         <span className="bg-gradient-to-r from-green-600 via-cyan-600 to-blue-400 bg-clip-text text-transparent">
           KewNomad
         </span>
       </h1>
-      <h2 className="text-gray-800 text-center text-lg mt-5">
+      <h2 className="text-gray-800 text-center text-lg mt-5 max-w-2xl">
         KewNomad is your gateway to a diverse array of job opportunities.
         Explore carefully curated job listings, simplify your application
         process, and connect with companies fostering career growth. No
