@@ -1,26 +1,21 @@
 import { useState, useEffect } from "react";
 
+import { jobApi, useLazyGetJobInfoQuery } from "../services/job";
+
 const Demo = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [jobs, setJobs] = useState();
 
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("https://arbeitnow.com/api/job-board-api");
-        const data = await response.json();
+  const [getJobInfo, { error, isFetching }] = useLazyGetJobInfoQuery();
 
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-
-    // fetchData();
-  }, []);
-
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    alert("submitted");
+
+    const { data } = await getJobInfo({ searchQuery: searchQuery });
+
+    if (data?.data) {
+      setJobs(data?.data);
+    }
   }
 
   return (
