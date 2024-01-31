@@ -1,21 +1,22 @@
 import React from "react";
 
-const JobElement = () => {
+const JobElement = (props) => {
   return (
-    <div className="w-full flex flex-col gap-4 bg-white border border-gray-400 p-4 cursor-pointer transition hover:border-cyan-700">
-      <div className="flex gap-4">
+    <div className="w-full h-36 flex flex-col justify-center gap-4 bg-white border border-gray-400 p-4 cursor-pointer transition hover:border-cyan-700">
+      <div className="flex items-center gap-4">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKlgydP7sElaJC9qPrtNHwBhyTMHYgii1RPWsy&s=0"
+          className="w-16 h-16 border border-gray-500 p-1 object-contain rounded-[100%]"
+          src={props.imgLink || "https://shmector.com/_ph/13/188552034.png"}
           alt="employer logo"
         />
         <div>
-          <p className="text-cyan-700">Rockstar Games New York</p>
-          <p className="text-lg">Project Manager</p>
-          <p className="text-gray-500">Houston, TX, US</p>
+          <p className="text-cyan-700">{props.employerName}</p>
+          <p className="text-lg">{props.jobTitle}</p>
+          <p className="text-gray-500">{props.jobLocation}</p>
         </div>
         <div className="ml-auto">
-          <a href="/">
-            <i class="fa-solid fa-diamond-turn-right text-3xl transition hover:text-cyan-600"></i>
+          <a href={props.applyLink}>
+            <i className="fa-solid fa-diamond-turn-right text-3xl transition hover:text-cyan-600"></i>
           </a>
         </div>
       </div>

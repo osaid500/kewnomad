@@ -19,6 +19,19 @@ const Demo = () => {
     }
   }
 
+  const jobElements = jobs?.map((job, index) => {
+    return (
+      <JobElement
+        key={`job_${index}`}
+        imgLink={job.employer_logo}
+        jobTitle={job.job_title}
+        employerName={job.employer_name}
+        jobLocation={`${job.job_city}, ${job.job_state}, ${job.job_country}`}
+        applyLink={job.job_apply_link}
+      />
+    );
+  });
+
   return (
     <section className="mt-16 w-full flex flex-col items-center">
       <form
@@ -37,8 +50,8 @@ const Demo = () => {
           Find Jobs
         </button>
       </form>
-      <div className="w-full grid grid-cols-1 bg-green md:grid-cols-2 mt-5">
-        <JobElement />
+      <div className="w-full grid grid-cols-1 gap-5 bg-green md:grid-cols-2 mt-10">
+        {jobElements}
       </div>
     </section>
   );
