@@ -24,6 +24,10 @@ const Demo = () => {
       .filter(Boolean)
       .join(", ");
 
+    const daysPosted = Math.floor(
+      (Date.now() - job.job_posted_at_timestamp * 1000) / (1000 * 60 * 60 * 24)
+    );
+
     return (
       <JobElement
         key={`job_${index}`}
@@ -32,6 +36,7 @@ const Demo = () => {
         employerName={job.employer_name}
         jobLocation={jobLocation}
         applyLink={job.job_apply_link}
+        daysPosted={daysPosted}
       />
     );
   });

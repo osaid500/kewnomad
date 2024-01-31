@@ -12,7 +12,12 @@ const JobElement = (props) => {
         <div>
           <p className="text-cyan-700">{props.employerName}</p>
           <p className="text-lg">{props.jobTitle}</p>
-          <p className="text-gray-500">{props.jobLocation}</p>
+          <div className="flex gap-1 items-center mt-1 text-sm text-gray-500">
+            <i className="fa-solid fa-location-dot"></i>
+            <p className="text-gray-500">{props.jobLocation}</p>
+            <i className="fa-regular fa-calendar ml-6"></i>
+            <span className="">{props.daysPosted} days ago</span>
+          </div>
         </div>
         <div className="ml-auto">
           <a href={props.applyLink}>
