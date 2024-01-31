@@ -20,13 +20,17 @@ const Demo = () => {
   }
 
   const jobElements = jobs?.map((job, index) => {
+    const jobLocation = [job.job_city, job.job_state, job.job_country]
+      .filter(Boolean)
+      .join(", ");
+
     return (
       <JobElement
         key={`job_${index}`}
         imgLink={job.employer_logo}
         jobTitle={job.job_title}
         employerName={job.employer_name}
-        jobLocation={`${job.job_city}, ${job.job_state}, ${job.job_country}`}
+        jobLocation={jobLocation}
         applyLink={job.job_apply_link}
       />
     );
