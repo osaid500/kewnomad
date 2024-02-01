@@ -2,7 +2,10 @@ import React from "react";
 
 const JobElement = (props) => {
   return (
-    <div className="w-full h-36 flex flex-col justify-center gap-4 bg-white border border-gray-400 p-4 cursor-pointer transition hover:border-cyan-700">
+    <div
+      className="w-full h-36 flex flex-col justify-center gap-4 bg-white border border-gray-400 p-4 cursor-pointer transition hover:border-cyan-700"
+      onClick={() => window.open(props.applyLink)}
+    >
       <div className="flex items-center gap-4">
         <img
           className="w-16 h-16 border border-gray-500 p-1 object-contain rounded-[100%]"
