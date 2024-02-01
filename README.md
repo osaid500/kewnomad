@@ -4,6 +4,10 @@
 
 Welcome to KewNomad, your go-to platform for discovering diverse job opportunities. Whether you're a seasoned professional or just starting your career journey, KewNomad is here to connect you with exciting opportunities from around the world. Explore a wide range of job listings tailored to your skills and interests.
 
+## Live URL
+
+[https://kewnomad.netlify.app/](https://kewnomad.netlify.app/)
+
 ## Features
 
 - **Job Listings:** Browse a curated list of job opportunities.
