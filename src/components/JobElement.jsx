@@ -1,10 +1,18 @@
 import React from "react";
 
 const JobElement = (props) => {
+  function handleClick(e) {
+    console.log(e.target.id);
+    if (e.target.id === "job-element") {
+      window.open(props.applyLink);
+    }
+  }
+
   return (
     <div
+      id="job-element"
       className="w-full h-36 flex flex-col justify-center gap-4 bg-white border border-gray-400 p-4 cursor-pointer transition hover:border-cyan-700"
-      onClick={() => window.open(props.applyLink)}
+      onClick={handleClick}
     >
       <div className="flex items-center gap-4">
         <img
@@ -23,7 +31,7 @@ const JobElement = (props) => {
           </div>
         </div>
         <div className="ml-auto">
-          <a href={props.applyLink}>
+          <a href={props.applyLink} target="_blank">
             <i className="fa-solid fa-diamond-turn-right text-3xl transition hover:text-cyan-600"></i>
           </a>
         </div>
