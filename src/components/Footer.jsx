@@ -4,8 +4,8 @@ const Footer = () => {
   const FooterItem = (props) => {
     const { link, iconClasses } = props;
     return (
-      <li className="w-7 h-7 rounded-full bg-gray-100 flex justify-center items-center transition hover:bg-gray-300">
-        <a href={link} target="_blank">
+      <li className="rounded-full bg-gray-100 flex justify-center items-center transition hover:bg-gray-300">
+        <a className="w-7 h-7 text-center" href={link} target="_blank">
           <i className={`${iconClasses} text-lg`}></i>
         </a>
       </li>
