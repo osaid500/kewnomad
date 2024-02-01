@@ -1,11 +1,17 @@
 import React from "react";
 
+import defaultLogoUrl from "../images/defaultLogo.png";
+
 const JobElement = (props) => {
   function handleClick(e) {
     console.log(e.target.tagName);
     if (e.target.tagName !== "I" && e.target.tagName !== "A") {
       window.open(props.applyLink);
     }
+  }
+
+  function handleImageError(e) {
+    e.target.src = defaultLogoUrl;
   }
 
   return (
@@ -17,8 +23,9 @@ const JobElement = (props) => {
       <div className="flex items-center gap-4">
         <img
           className="w-16 h-16 border border-gray-500 p-1 object-contain rounded-[100%]"
-          src={props.imgLink || "https://shmector.com/_ph/13/188552034.png"}
+          src={props.imgLink || defaultLogoUrl}
           alt="employer logo"
+          onError={handleImageError}
         />
         <div className="overflow-hidden">
           <p className="text-cyan-700">{props.employerName}</p>
