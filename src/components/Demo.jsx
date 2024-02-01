@@ -6,13 +6,16 @@ import JobElement from "./JobElement";
 const Demo = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [jobs, setJobs] = useState();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [getJobInfo, { error, isFetching }] = useLazyGetJobInfoQuery();
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
     const { data } = await getJobInfo({ searchQuery: searchQuery });
+    setIsLoading(false);
 
     if (data?.data) {
       setJobs(data?.data);
@@ -44,7 +47,7 @@ const Demo = () => {
   return (
     <section className="mt-16 w-full flex flex-col items-center">
       <form
-        className="relative w-full gap-2 flex flex-col justify-center items-center max-w-xl"
+        className="relative w-full gap-2 flex flex-col justify-center items-center max-w-xl mb-10"
         onSubmit={handleSubmit}
       >
         <input
@@ -59,6 +62,11 @@ const Demo = () => {
           Find Jobs
         </button>
       </form>
+      {isLoading ? (
+        <div className="spinner border-t-4 border-blue-500 border-solid h-12 w-12 rounded-full animate-spin" />
+      ) : (
+        ""
+      )}
       <div className="w-full grid grid-cols-1 gap-5 bg-green md:grid-cols-2 mt-10">
         {jobElements}
       </div>
