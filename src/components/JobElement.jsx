@@ -20,9 +20,9 @@ const JobElement = (props) => {
           src={props.imgLink || "https://shmector.com/_ph/13/188552034.png"}
           alt="employer logo"
         />
-        <div>
+        <div className="overflow-hidden">
           <p className="text-cyan-700">{props.employerName}</p>
-          <p className="text-lg">{props.jobTitle}</p>
+          <p className="text-lg w-full truncate">{props.jobTitle}</p>
           <div className="flex gap-1 items-center mt-1 text-sm text-gray-500">
             <i className="fa-solid fa-location-dot"></i>
             <p className="text-gray-500">{props.jobLocation}</p>
