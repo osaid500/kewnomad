@@ -45,7 +45,7 @@ const Demo = () => {
   });
 
   return (
-    <section className="mt-16 w-full flex flex-col items-center">
+    <section className="mt-16 w-full flex flex-col items-center px-6">
       <form
         className="relative w-full gap-2 flex flex-col justify-center items-center max-w-xl mb-10"
         onSubmit={handleSubmit}
