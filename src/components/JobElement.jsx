@@ -2,8 +2,8 @@ import React from "react";
 
 const JobElement = (props) => {
   function handleClick(e) {
-    console.log(e.target.id);
-    if (e.target.id === "job-element") {
+    console.log(e.target.tagName);
+    if (e.target.tagName !== "I") {
       window.open(props.applyLink);
     }
   }
