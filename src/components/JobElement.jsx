@@ -3,7 +3,7 @@ import React from "react";
 const JobElement = (props) => {
   function handleClick(e) {
     console.log(e.target.tagName);
-    if (e.target.tagName !== "I") {
+    if (e.target.tagName !== "I" && e.target.tagName !== "A") {
       window.open(props.applyLink);
     }
   }
