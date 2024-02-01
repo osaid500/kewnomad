@@ -1,5 +1,3 @@
-import React from "react";
-
 import defaultLogoUrl from "../images/defaultLogo.png";
 
 const JobElement = (props) => {
@@ -34,7 +32,7 @@ const JobElement = (props) => {
             <i className="fa-solid fa-location-dot"></i>
             <p className="text-gray-500">{props.jobLocation}</p>
             <i className="fa-regular fa-calendar ml-6"></i>
-            <span className="">{props.daysPosted} days ago</span>
+            <span>{props.timeAgo}</span>
           </div>
         </div>
         <div className="ml-auto">

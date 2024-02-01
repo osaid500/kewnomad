@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import moment from "moment";
 
 import { jobApi, useLazyGetJobInfoQuery } from "../services/job";
 import JobElement from "./JobElement";
@@ -27,9 +28,11 @@ const Demo = () => {
       .filter(Boolean)
       .join(", ");
 
-    const daysPosted = Math.floor(
-      (Date.now() - job.job_posted_at_timestamp * 1000) / (1000 * 60 * 60 * 24)
-    );
+    const timeAgo = moment
+      .utc(job.job_posted_at_datetime_utc)
+      .local()
+      .startOf("seconds")
+      .fromNow();
 
     return (
       <JobElement
@@ -39,7 +42,7 @@ const Demo = () => {
         employerName={job.employer_name}
         jobLocation={jobLocation}
         applyLink={job.job_apply_link}
-        daysPosted={daysPosted}
+        timeAgo={timeAgo}
       />
     );
   });
